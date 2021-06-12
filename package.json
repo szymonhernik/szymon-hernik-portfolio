@@ -1,0 +1,25 @@
+{
+  "name": "szymon_portfolio_website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js ",
+    "open": "concurrently \"open http://localhost:8000/\"",
+    "server": "npm run open && npm run start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Szymon Hernik",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "concurrently": "^6.0.2",
+    "connect-livereload": "^0.6.1",
+    "http-server": "^0.12.3",
+    "livereload": "^0.9.3",
+    "node-sass": "^5.0.0",
+    "node-sass-middleware": "^0.11.0"
+  }
+}
