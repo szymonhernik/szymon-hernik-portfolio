@@ -1,0 +1,19 @@
+@font-face {
+  font-family: Ext_Bl;
+  src: url(fonts/Black_Extended.woff2); }
+
+@font-face {
+  font-family: Ext_Rg;
+  src: url(fonts/Extended_Regular.woff2); }
+
+@font-face {
+  font-family: Rg;
+  src: url(fonts/Regular.woff2); }
+
+* {
+  margin: 0;
+  padding: 0;
+  font: 100% "Ext_Bl", sans-serif; }
+
+body {
+  background-color: white; }
