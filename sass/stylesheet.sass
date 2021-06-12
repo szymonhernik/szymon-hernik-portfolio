@@ -1,6 +1,6 @@
 @font-face
-  font-family: Ext_Bl
-  src: url(fonts/Black_Extended.woff2)
+  font-family: Exp_Bl
+  src: url(fonts/Black_Expanded.woff2)
 
 @font-face
   font-family: Ext_Rg
@@ -13,7 +13,7 @@
 
 
 
-$font-nav: 'Ext_Bl', sans-serif
+$font-nav: 'Exp_Bl', sans-serif
 $font-nav-2: 'Ext_Rg', sans-serif
 $font-text: 'Rg', sans-serif
 
@@ -24,7 +24,199 @@ $font-text: 'Rg', sans-serif
   padding: 0
   font: 100% $font-nav
 
+a
+  text-decoration: none
+  color: black
+
 
 
 body
-  background-color: white
+  // background-color: white
+
+  .overlay
+    width: 100vw
+    height: 100vh
+    position: absolute
+    top: 0
+    left: 0
+    background-color: black
+    opacity: 0
+
+    &--active
+      // opacity: 1
+      // z-index: 100
+      animation: fadeIn 1s 1
+    &--disactivate
+      // opacity: 1
+      // z-index: 100
+      // animation: fadeOut 1s 1
+
+    @keyframes fadeIn
+      0%
+        opacity: 0
+      100%
+        opacity: 0.5
+
+
+
+
+
+  main
+    height: 100vh
+    width: 100vw
+    position: absolute
+    left: 0
+    top: 0
+
+
+    &.animate-up
+
+      transform: translateY(0)
+      animation: menuUp 0.5s forwards
+    &.animate-down
+
+      transform: translateY(-40vh)
+      animation: menuDown 0.3s forwards
+
+    @keyframes menuUp
+      0%
+        transform: translateY(0)
+        // background-color: white
+
+      100%
+        transform: translateY(-40vh)
+        // background-color: darkgrey
+
+    @keyframes menuDown
+      0%
+        transform: translateY(-40vh)
+        // background-color: darkgrey
+
+      100%
+        transform: translateY(0)
+        // background-color: white
+
+
+
+    nav.nav
+      position: absolute
+      display: flex
+      width: 100vw
+
+      align-items: center
+      flex-direction: column
+
+
+      &--top
+        top: 0
+        h1
+          letter-spacing: -0.03em
+          margin-bottom: -.1em
+          font-size: 6em
+
+          &:hover
+            visibility: visible
+
+          a
+            cursor: default
+
+      &--bottom
+        font-size: 0.9em
+        bottom: 1em
+
+
+#projects-container-async
+  z-index: 1000
+  background: white
+  min-width: 100vw
+  min-height: 100vh
+
+  #async-content
+
+    min-height: 100vh
+    transform: translateY(100vh)
+
+    #new-projects
+      font-size: 10em
+      text-align: center
+      background: white
+      width: 100vw
+      height: 400vh
+
+    .project-overlay
+      position: absolute
+      top: 0
+      left: 0
+      z-index: -10
+      width: 100vw
+      height: 100vh
+      background-color: black
+      opacity: 0
+
+      &--activated
+        z-index: 1000
+        animation: fadeOut 0.3s 1
+
+        @keyframes fadeOut
+          0%
+            opacity: 0
+          100%
+            opacity: 0.5
+
+  .animate-in
+    animation: slideIn 0.5s forwards
+  .animate-out
+    animation: slideOut 0.3s forwards
+
+
+  @keyframes slideIn
+    0%
+      transform: translateY(100vh)
+
+    100%
+      transform: translateY(0)
+  @keyframes slideOut
+    0%
+      transform: translateY(0)
+
+    100%
+      transform: translateY(100vh)
+
+
+  #async-content
+    nav.nav
+      position: absolute
+      display: flex
+      width: 100vw
+      align-items: center
+      flex-direction: column
+
+      &--top
+        width: 100%
+
+        position: fixed
+        top: 0.5em
+        font-size: 0.9em
+        h1
+          margin-bottom: -.1em
+          font-size: 6em
+
+          &:hover
+            visibility: visible
+
+          a
+            cursor: default
+
+      &--bottom
+        bottom: 1em
+
+
+
+    #new-projects
+      padding-top: 10vh
+      .box
+        width: 45vw
+        float: left
+        margin: 10px
+        height: 50vh
+        background: black
