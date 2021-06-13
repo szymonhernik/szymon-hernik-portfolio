@@ -7,11 +7,35 @@ $desktop: 1024px
   body
     visibility: visible
 
+  #projects-container-async
+    #async-content
+      #new-index
+        .content
+          p, span
+          .category
+            flex-direction: column
+            .category-list
+              ul
+                li
+                  display: block
+
 
 @media only screen and (min-width: $phone) and (max-width: $tablet)
 
   body
     visibility: visible
+
+  #projects-container-async
+    #async-content
+      #new-index
+        .content
+          p, span
+          .category
+            .category-list
+              ul
+                li
+                  display: block
+                  // margin: 0 0 0 0
 
 @media only screen and (min-width: 2000px)
 

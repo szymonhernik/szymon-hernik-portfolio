@@ -1,10 +1,16 @@
 @media only screen and (max-width: 540px) {
   body {
-    visibility: visible; } }
+    visibility: visible; }
+  #projects-container-async #async-content #new-index .content .category {
+    flex-direction: column; }
+    #projects-container-async #async-content #new-index .content .category .category-list ul li {
+      display: block; } }
 
 @media only screen and (min-width: 540px) and (max-width: 768px) {
   body {
-    visibility: visible; } }
+    visibility: visible; }
+  #projects-container-async #async-content #new-index .content .category .category-list ul li {
+    display: block; } }
 
 @media only screen and (min-width: 2000px) {
   body {
