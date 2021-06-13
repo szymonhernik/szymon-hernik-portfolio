@@ -71,9 +71,15 @@ body
 
 
     &.animate-up
-
       transform: translateY(0)
       animation: menuUp 0.8s forwards
+
+    &.animate-from-bottom
+      z-index: 1000000
+      transform: translateY(-100vh)
+      // animation-delay: 1s
+      animation: menuFromBOTTOM 0.8s forwards
+
     &.animate-down
       z-index: 1000000
       transform: translateY(-40vh)
@@ -87,6 +93,17 @@ body
       100%
         transform: translateY(-30vh)
         background-color: rgb(131, 131, 131)
+
+    @keyframes menuFromBOTTOM
+      0%
+        transform: translateY(100vh)
+        // background-color: rgb(131, 131, 131)
+
+
+      100%
+        transform: translateY(0)
+        // background-color: white
+
 
     @keyframes menuDown
       0%
@@ -119,7 +136,7 @@ body
           visibility: visible
 
         a
-          cursor: default
+          cursor: pointer
 
     &--bottom
       font-size: 0.9em
@@ -153,7 +170,7 @@ body
 
       &--activated
         z-index: 1000
-        animation: fadeOut  0.3s 1
+        animation: fadeOut  0.8s 1
 
         @keyframes fadeOut
           0%
@@ -166,7 +183,7 @@ body
     .animate-in
       animation: slideIn 0.6s ease-out forwards
     .animate-out
-      animation: slideOut 0.3s forwards
+      animation: slideOut 0.6s ease-out forwards
 
 
     @keyframes slideIn
@@ -177,9 +194,8 @@ body
     @keyframes slideOut
       0%
         transform: translateY(0)
-
       100%
-        transform: translateY(100vh)
+        transform: translateY(-20vh)
 
 
   #async-content
@@ -199,11 +215,14 @@ body
       align-items: center
       flex-direction: column
       z-index: 1000
+      // top: -1.6em
 
       &.projectsMenu
         animation: moveUp 0.3s ease-in forwards
       &.projectsMenu-down
         animation: moveDown 0.3s ease-in forwards
+      &.projectsMenu-out
+        animation: moveOut 0.4s ease-in forwards
 
         @keyframes moveUp
           0%
@@ -215,6 +234,11 @@ body
             top: -1.6em
           100%
             top: 0
+        @keyframes moveOut
+          0%
+            top: -1.6em
+          100%
+            top: -4em
 
 
       &--top
@@ -235,7 +259,7 @@ body
           a
             cursor: default
         h2
-          cursor: default
+          cursor: pointer
 
           &.projects-category
             font: 100% $font-nav-2
