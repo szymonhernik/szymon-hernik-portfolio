@@ -40,6 +40,7 @@ a
 body
 
   // background-color: white
+  cursor: default
 
   .overlay
     width: 100vw
@@ -156,6 +157,10 @@ body
 
   // height: 100%
   // width: 100%
+  &.from-projects
+    position: absolute
+    left: 0
+    top: 0
 
 
   #async-content
@@ -171,7 +176,7 @@ body
       .content
 
         // overflow-y: hidden
-        padding-top: 26vh
+        padding-top: 20vh
         margin: 0 auto
         width: 95%
         max-width: 80em
@@ -262,6 +267,17 @@ body
           line-height: 1.35em
           margin-bottom: 30px
           font-size: 1.08em
+          a
+            font: 100% $font-nav-2
+            letter-spacing: 0.05em
+            line-height: 1.35em
+            margin-bottom: 30px
+            font-size: .94em
+
+            &:hover
+              cursor: pointer
+              text-decoration: underline
+
 
     #new-projects
       font-size: 10em
@@ -270,16 +286,61 @@ body
       width: 100vw
       // height: 400vh
 
+      section
+        &.section-to-fade
+          opacity: 1
+
+
+        &.fade-in
+          animation: fade-in 1s ease-out forwards
+
+          @keyframes fade-in
+            0%
+              transform: translateY(40px)
+              // opacity: 0.5
+            100%
+              transform: translateY(0)
+              // opacity: 1
+
       .box
         position: relative
+        opacity: 1
+
+
+
         .img-project
           width: 100%
           height: 100%
-          margin-top: 20%
+          display: flex
+          align-items: flex-end
+          justify-content: center
+
+          // &--portrait
+          //   margin-bottom: 10%
+          //
+          // &--horizontal
+          //   margin-bottom: 15%
           img
-            width: 50%
-            height: 60%
-            background-color: white
+            // width: 50%
+            // height: 60%
+            // background-color: white
+
+            &.portrait
+              margin-bottom: 5%
+              height: 80%
+              width: auto
+            &.horizontal
+              margin-bottom: 15%
+              height: auto
+              width: 90%
+
+            &.horizontal-control
+              margin-bottom: 15%
+              height: 65%
+            &.horizontal-control-2
+              margin-bottom: 30%
+              width: 90%
+              // width: 90%
         .info-project
           // background-color: blue
           opacity: 0
@@ -371,7 +432,27 @@ body
     overflow-y: scroll
     background-color: white
 
-    .async-container
+
+    .nav--right
+      position: fixed
+      top: 0
+      right: 20px
+      display: none
+
+      z-index: 10000
+      padding: 20px
+
+      padding-bottom: 5px
+      color: black
+
+      &.from-project
+        display: block
+
+      p
+        font: 100% $font-nav-2
+        font-size: .7em
+
+
 
     nav.nav
       position: absolute
@@ -404,6 +485,7 @@ body
             top: -1.6em
           100%
             top: -4em
+
 
 
       &--top
@@ -444,7 +526,7 @@ body
       section
         display: flow-root
         width: 98%
-        margin: 0 auto 20px auto
+        margin: 0 auto 60px auto
 
         .box
           margin: 3px
@@ -452,3 +534,110 @@ body
           height: 44vw
           background: black
           float: left
+
+
+
+
+
+
+
+
+
+
+body#section-projects
+  background: black
+  display: flex
+  justify-content: center
+
+  section.section-project-nav
+    position: absolute
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    // background: yellow
+    width: 100vw
+    // height: 10vh
+
+    h4
+      color: white
+      font-size: .6em
+
+    .nav-elem
+      padding: 20px
+    .left
+      padding-left: 35px
+
+
+
+    .right
+      display: flex
+      flex-direction: row
+
+      h4
+        margin: 0 20px
+        font: 100% $font-nav-2
+        font-size: .6em
+
+  section.section-project-index
+    position: absolute
+    bottom: 1em
+    p, span
+      font: 100% $font-nav-2
+      font-size: .8em
+      color: white
+
+  section.section-project-title
+    position: absolute
+    top: 1.2em
+    // width: 100vw
+
+    h3
+      font-size: .9em
+      color: white
+      text-transform: uppercase
+      // margin: 0 auto
+
+  section#fullPage
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    margin-top: 8vh
+    width: 100vw
+    height: 92vh
+
+    p
+      margin: -8vh auto 0 auto
+      width: 46%
+      line-height: 1.8em !important
+      color: white
+      font-size: .8em
+      font: 100% $font-text
+      opacity: 0
+      animation: textSlide .5s ease-out forwards
+
+
+      @keyframes textSlide
+        0%
+          transform: translateY(20vh)
+          opacity: 0
+        100%
+          transform: translateY(0)
+          opacity: 1
+    h1
+      color: white
+
+    img
+      &.portrait
+        height: 80vh
+        width: auto
+      &.horizontal
+        width: 70vw
+        height: auto
+
+    .full-page-project
+      // background-color: yellow
+      display: none
+
+      &.in-view
+        display: block
