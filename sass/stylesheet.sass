@@ -42,6 +42,18 @@ body
   // background-color: white
   cursor: default
 
+  #next-project
+    color: white
+    position: absolute
+    // left: 90vw
+    // top: 60vh
+    z-index: 99999999
+    mix-blend-mode: difference
+    font: 100% $font-nav-2
+    font-size: .8em
+    white-space: nowrap
+    display: none
+
   .overlay
     width: 100vw
     height: 100vh
@@ -74,6 +86,7 @@ body
     height: 100vh
     width: 100vw
     position: absolute
+    // overflow-y: hidden
     left: 0
     top: 0
     background-color: white
@@ -226,6 +239,9 @@ body
         flex-direction: column
         align-items: center
 
+        .arrows
+          display: none
+
         p
           font: 100% $font-nav-2
           font-size: .9em
@@ -248,11 +264,13 @@ body
 
     #new-info
       // min-height: 100vh
-      height: 100%
       width: 100vw
       background-color: white
       font: 100% $font-text
       padding-top: 20vh
+
+      section
+
 
 
 
@@ -407,6 +425,7 @@ body
 
 
     .animate-in
+      background-color: white
       animation: slideIn 0.6s ease-out forwards
     .animate-out
       animation: slideOut 0.6s ease-out forwards
@@ -414,7 +433,7 @@ body
 
     @keyframes slideIn
       0%
-        transform: translateY(100vh)
+        transform: translateY(40vh)
       100%
         transform: translateY(0)
     @keyframes slideOut
@@ -432,6 +451,10 @@ body
     overflow-y: scroll
     background-color: white
 
+    .async-container
+      padding-bottom: 10em
+      // transform: translateY(0)
+
 
     .nav--right
       position: fixed
@@ -439,7 +462,7 @@ body
       right: 20px
       display: none
 
-      z-index: 10000
+      z-index: 991000000
       padding: 20px
 
       padding-bottom: 5px
@@ -572,6 +595,7 @@ body#section-projects
     .right
       display: flex
       flex-direction: row
+      z-index: 1
 
       h4
         margin: 0 20px
@@ -581,10 +605,20 @@ body#section-projects
   section.section-project-index
     position: absolute
     bottom: 1em
+
     p, span
       font: 100% $font-nav-2
       font-size: .8em
       color: white
+
+    &.section-project-link
+      bottom: 2em
+      p
+        a
+          font: 100% $font-nav-2
+          color: white
+          &:hover
+            cursor: pointer
 
   section.section-project-title
     position: absolute
@@ -605,16 +639,21 @@ body#section-projects
     margin-top: 8vh
     width: 100vw
     height: 92vh
+    position: relative
+
 
     p
       margin: -8vh auto 0 auto
-      width: 46%
+      width: 48%
       line-height: 1.8em !important
       color: white
       font-size: .8em
       font: 100% $font-text
       opacity: 0
       animation: textSlide .5s ease-out forwards
+
+
+
 
 
       @keyframes textSlide
@@ -626,18 +665,48 @@ body#section-projects
           opacity: 1
     h1
       color: white
-
+    video
+      &.horizontal
+        width: 80vw
+        max-width: 56em
+        height: auto
+        margin-top: -10vh
+      &.horizontal-big
+        width: 80vw
+        max-width: 68em
+        height: auto
+        margin-top: -10vh
+      &.portrait
+        height: 80vh
+        width: auto
     img
       &.portrait
         height: 80vh
         width: auto
       &.horizontal
         width: 70vw
+        max-width: 56em
         height: auto
+        margin-top: -5vh
+      &.horizontal-big
+        width: 90vw
+        max-width: 70em
+        height: auto
+      &.horizontal-small
+        width: 40vw
+        max-width: 70em
+        height: auto
+      &.middle
+        width: 60vw
+        height: auto
+        max-width: 48em
+    iframe
+      max-height: 80vh
 
     .full-page-project
       // background-color: yellow
       display: none
+      width: 100%
 
       &.in-view
-        display: block
+        display: contents

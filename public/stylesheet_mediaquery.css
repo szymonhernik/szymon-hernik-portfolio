@@ -1,17 +1,102 @@
 @media only screen and (max-width: 540px) {
+  body#section-projects section#fullPage {
+    margin-top: 10vh; }
+    body#section-projects section#fullPage img.portrait {
+      margin-top: -20vh;
+      height: auto;
+      width: 80vw; }
+      body#section-projects section#fullPage img.portrait--long {
+        width: 70vw; }
+    body#section-projects section#fullPage img.horizontal {
+      margin-top: -20vh;
+      width: 96vw;
+      height: auto; }
+    body#section-projects section#fullPage video.horizontal {
+      margin-top: -20vh;
+      width: 96vw;
+      height: auto; }
+    body#section-projects section#fullPage p {
+      margin-top: -20vh;
+      width: 92vw; }
+  body#section-projects section.section-project-title {
+    top: auto;
+    bottom: 2em; }
+    body#section-projects section.section-project-title h3 {
+      font-size: 3.2vw; }
+  body#section-projects section.section-project-nav .nav-elem {
+    padding: 20px 0 0 0; }
+  body#section-projects section.section-project-nav .left {
+    padding-left: 16px; }
+  body#section-projects section.section-project-nav h4 {
+    font-size: .6em; } }
+
+@media only screen and (max-width: 768px) {
   body {
     visibility: visible; }
-  #projects-container-async #async-content #new-index .content .category {
+  #projects-container-async #async-content #new-projects section .box {
+    width: calc(100% - 6px);
+    height: 46vh; }
+  #projects-container-async #async-content #new-info {
+    padding-bottom: 30vh;
+    height: 100%; }
+  #projects-container-async #async-content #new-index .content {
+    padding-top: 10vh;
+    padding-bottom: 20vh;
+    display: flex;
     flex-direction: column; }
-    #projects-container-async #async-content #new-index .content .category .category-list ul li {
-      display: block; } }
+    #projects-container-async #async-content #new-index .content div:last-child {
+      order: 1; }
+    #projects-container-async #async-content #new-index .content .index-projects {
+      margin: 0 auto 2em auto;
+      width: 90vw; }
+      #projects-container-async #async-content #new-index .content .index-projects .arrows {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        width: 100%; }
+        #projects-container-async #async-content #new-index .content .index-projects .arrows .arrow {
+          margin: 0 4em;
+          display: inline; }
+      #projects-container-async #async-content #new-index .content .index-projects .index-projects-image {
+        margin: .5em;
+        max-width: 100%;
+        position: relative; }
+        #projects-container-async #async-content #new-index .content .index-projects .index-projects-image img {
+          position: absolute;
+          top: -9999px;
+          bottom: -9999px;
+          left: -9999px;
+          right: -9999px;
+          margin: auto; }
+    #projects-container-async #async-content #new-index .content .category {
+      flex-direction: column;
+      margin: 1em 0;
+      order: 2; }
+      #projects-container-async #async-content #new-index .content .category .category-title {
+        margin-bottom: 0; }
+      #projects-container-async #async-content #new-index .content .category .category-list {
+        margin-left: 0; }
+        #projects-container-async #async-content #new-index .content .category .category-list ul li {
+          margin: 0 0 0 0;
+          width: 100%; }
+          #projects-container-async #async-content #new-index .content .category .category-list ul li a {
+            white-space: normal;
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between; } }
 
 @media only screen and (min-width: 540px) and (max-width: 768px) {
   body {
-    visibility: visible; }
-  #projects-container-async #async-content #new-index .content .category .category-list ul li {
-    display: block; } }
+    visibility: visible; } }
 
 @media only screen and (min-width: 2000px) {
   body {
     visibility: visible; } }
+
+@media only screen and (max-width: 768px) {
+  body nav.nav--top {
+    padding-top: 2vh; }
+    body nav.nav--top h1 {
+      font-size: 10vw; }
+  body nav.nav--bottom {
+    bottom: 14vh; } }

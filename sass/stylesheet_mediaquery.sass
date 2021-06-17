@@ -2,22 +2,152 @@ $phone: 540px
 $tablet: 768px
 $desktop: 1024px
 
+$font-nav: 'Exp_Bl', sans-serif
+$font-nav-2: 'Ext_Rg', sans-serif
+$font-text: 'Rg', sans-serif
+
 @media only screen and (max-width: $phone)
+
+  body#section-projects
+    section#fullPage
+      margin-top: 10vh
+      img.portrait
+        margin-top: -20vh
+        height: auto
+        width: 80vw
+        &--long
+          width: 70vw
+
+      img.horizontal
+        margin-top: -20vh
+        width: 96vw
+        height: auto
+      video.horizontal
+        margin-top: -20vh
+        width: 96vw
+        height: auto
+
+      p
+        margin-top: -20vh
+        width: 92vw
+    section.section-project-title
+      top: auto
+      bottom: 2em
+      h3
+        font-size: 3.2vw
+    section.section-project-nav
+      .nav-elem
+        padding: 20px 0 0 0
+      .left
+        padding-left: 16px
+      h4
+        font-size: .6em
+
+@media only screen and (max-width: $tablet)
 
   body
     visibility: visible
 
   #projects-container-async
     #async-content
+      #new-projects
+        section
+          .box
+            width: calc(100% - 6px)
+            height: 46vh
+
+            .info-project
+              // opacity: 1 !important
+      #new-info
+        padding-bottom: 30vh
+        height: 100%
+        .content
+          p
+            &:last-child
+              // margin-bottom: 10vh
+
       #new-index
         .content
-          p, span
+          padding-top: 10vh
+          padding-bottom: 20vh
+          display: flex
+          flex-direction: column
+
+          // div
+          //   order: 2
+          div:last-child
+            order: 1
+
+          span
+            &:first-child
+            // display: block
+
+          .index-projects
+            margin: 0 auto 2em auto
+            width: 90vw
+
+            .arrows
+              position: absolute
+              // top: 50%
+              display: flex
+              justify-content: center
+              width: 100%
+
+              .arrow
+                margin: 0 4em
+                display: inline
+
+
+
+            .index-projects-image
+              margin: .5em
+              max-width: 100%
+              position: relative
+              // height: auto
+
+
+
+              img
+                position: absolute
+                top: -9999px
+                bottom: -9999px
+                left: -9999px
+                right: -9999px
+                margin: auto
+                // width: 100%
+                // height: auto
+              // height: auto
           .category
             flex-direction: column
+            margin: 1em 0
+            order: 2
+
+
+
+            .category-title
+              // align-self: center
+              margin-bottom: 0
+
+              p
+                // font: 100% $font-nav-2
             .category-list
+              margin-left: 0
+
+
               ul
+
                 li
-                  display: block
+                  margin: 0 0 0 0
+                  width: 100%
+                  a
+                    // display: block
+                    white-space: normal
+                    display: flex
+                    flex-direction: row-reverse
+                    justify-content: space-between
+
+
+
 
 
 @media only screen and (min-width: $phone) and (max-width: $tablet)
@@ -31,13 +161,30 @@ $desktop: 1024px
         .content
           p, span
           .category
+            // flex-direction: column
             .category-list
               ul
                 li
-                  display: block
+                  // display: block
+
+                  &:first-child
+                    // margin: 0
                   // margin: 0 0 0 0
+
 
 @media only screen and (min-width: 2000px)
 
   body
     visibility: visible
+
+
+@media only screen and (max-width: $tablet)
+
+  body
+    nav.nav--top
+      padding-top: 2vh
+      h1
+        font-size: 10vw
+  body
+    nav.nav--bottom
+      bottom: 14vh
